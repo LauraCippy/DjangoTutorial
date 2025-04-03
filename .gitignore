@@ -1,0 +1,12 @@
+# Environments
+/.idea/
+/.venv/
+# Django
+*.log
+*.pot
+*.pyc
+# File di cache di Python
+__pycache__/
+*.py[cod]
+# Migrations compilate
+*/migrations/*.pyc
