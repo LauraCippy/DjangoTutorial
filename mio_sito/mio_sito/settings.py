@@ -31,12 +31,15 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.admin',        # Pannello di amministrazione
+    'django.contrib.auth',         # Gestione autenticazione utenti
+    'django.contrib.contenttypes', # Supporto per tipi di contenuti dinamici
+    'django.contrib.sessions',     # Gestione delle sessioni utente
+    'django.contrib.messages',     # Messaggi di notifica
+    'django.contrib.staticfiles',  # Gestione file statici (CSS, JS, img)
+
+    'mia_app.apps.MiaAppConfig',   # Riga da aggiungere
+
 ]
 
 MIDDLEWARE = [
