@@ -114,10 +114,17 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
+# Static and Media files (CSS, JavaScript, Images, etc...)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = 'static/'  # URL di base per i file statici
+STATICFILES_DIRS = [
+    BASE_DIR / "static",  # Cartella statica globale
+]
+
+MEDIA_URL = 'media/'            # URL per accedere ai file caricati dagli utenti
+MEDIA_ROOT = BASE_DIR / "media"  # Percorso dove Django salva i file caricati
+#MEDIA_ROOT=os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
