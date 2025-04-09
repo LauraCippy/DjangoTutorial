@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Benvenuto nella MIA_APP!</h1>
+
+{% if question_list %}
+    <ul>
+    {% for question in question_list %}
+        <li><a href="/mia_app/{{ question.id }}/">{{ question.domanda }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Non ci sono domande registrate!!</p>
+{% endif %}
+
+</body>
+</html>
