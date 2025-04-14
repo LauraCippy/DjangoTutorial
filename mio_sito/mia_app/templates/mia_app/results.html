@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>{{ question.domanda }}</h1>
+
+<ul>
+{% for choice in question.choice_set.all %}
+    <li>{{ choice.scelta }} -- {{ choice.voti }} vote{{ choice.voti|pluralize }}</li>
+{% endfor %}
+</ul>
+
+<a href="{% url 'mia_app:detail' question.id %}">Vuoi votare ancora ?</a>
+
+</body>
+</html>

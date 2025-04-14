@@ -10,7 +10,7 @@
 {% if question_list %}
     <ul>
     {% for question in question_list %}
-        <li><a href="/mia_app/{{ question.id }}/">{{ question.domanda }}</a></li>
+        <li><a href="{% url 'mia_app:detail' question.id %}">{{ question.domanda }}</a></li>
     {% endfor %}
     </ul>
 {% else %}
