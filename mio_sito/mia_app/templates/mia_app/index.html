@@ -1,21 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
 <h1>Benvenuto nella MIA_APP!</h1>
 
 {% if question_list %}
     <ul>
-    {% for question in question_list %}
+        {% for question in question_list %}
         <li><a href="{% url 'mia_app:detail' question.id %}">{{ question.domanda }}</a></li>
-    {% endfor %}
+        {% endfor %}
     </ul>
 {% else %}
     <p>Non ci sono domande registrate!!</p>
 {% endif %}
 
-</body>
-</html>
+<div>
+  <iframe
+    src="https://report.acecrm.it/public/dashboard/54641702-21ee-4d3a-8320-8b6fdc179f74"
+    frameborder="0"
+    width="800"
+    height="600"
+    allowtransparency
+></iframe>
+</div>
+
+{% endblock %}

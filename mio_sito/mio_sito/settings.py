@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -57,8 +57,8 @@ ROOT_URLCONF = 'mio_sito.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # Directory globale
+        'APP_DIRS': True,          # Cerca nelle sottocartelle 'templates' delle APP
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.request',
@@ -68,6 +68,9 @@ TEMPLATES = [
         },
     },
 ]
+# Aggiungi temporaneamente in settings.py per debug
+#print("Percorso templates:", os.path.join(BASE_DIR, 'templates'))
+
 
 WSGI_APPLICATION = 'mio_sito.wsgi.application'
 

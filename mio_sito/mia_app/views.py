@@ -1,16 +1,20 @@
 from django.db.models import F
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
+from django.template import loader
+from django.template.context_processors import request
 from django.urls import reverse
 from django.views import generic
 
 from .models import Question, Choice
 
-class IndexView(generic.ListView):
-    template_name = "mia_app/index.html"
-    context_object_name = "question_list"
-    def get_queryset(self):
-        return Question.objects.order_by("domanda")
+def index(request):
+    lista_domande = Question.objects.order_by("domanda")
+    template = loader.get_template("mia_app/index.html")
+    context = {
+        "question_list": lista_domande,
+    }
+    return HttpResponse(template.render(context, request))
 
 class DetailView(generic.DetailView):
     model = Question

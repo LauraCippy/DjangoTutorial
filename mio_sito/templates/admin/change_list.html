@@ -1,0 +1,10 @@
+{% extends "admin/change_list.html" %}
+
+{% block object-tools %}
+    <div class="custom-actions">
+        <a href="{% url 'custom_action' %}" class="btn btn-high btn-success">
+            <i class="icon-download-alt icon-white"></i> Esporta CSV
+        </a>
+    </div>
+    {{ block.super }}
+{% endblock %}

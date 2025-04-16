@@ -1,0 +1,24 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('My Custom Admin') }}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name">
+    <a href="{% url 'admin:index' %}">
+        Amministrazione Personalizzata
+    </a>
+</h1>
+
+<div>
+  <iframe
+    src="https://report.acecrm.it/public/dashboard/54641702-21ee-4d3a-8320-8b6fdc179f74"
+    frameborder="0"
+    width="800"
+    height="600"
+    allowtransparency
+></iframe>
+</div>
+
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
